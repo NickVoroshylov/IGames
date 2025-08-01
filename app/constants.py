@@ -1,0 +1,9 @@
+ADMIN = "admin"
+EDITOR = "editor"
+
+
+ADMIN_ACCESS = (ADMIN,)
+EDITOR_ACCESS = (ADMIN, EDITOR)
+
+
+DEFAULT_USER_ROLE_ID = 2

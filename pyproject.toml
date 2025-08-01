@@ -1,0 +1,94 @@
+[tool.poetry]
+name = "igames"
+version = "0.1.0"
+description = ""
+authors = []
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.110"
+uvicorn = { extras = ["standard"], version = "^0.30" }
+sqlalchemy = "^2.0"
+asyncpg = "^0.30"
+alembic = "^1.16.4"
+psycopg2-binary = "^2.9"
+python-dotenv = "^1.1.1"
+pydantic-settings = "^2.10.1"
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+bcrypt = "<4.0"
+python-jose = {extras = ["cryptography"], version = "^3.5.0"}
+python-multipart = "^0.0.20"
+pytest = "^8.4.1"
+pytest-asyncio = "^1.1.0"
+httpx = "^0.28.1"
+aiosqlite = "^0.21.0"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.4"
+pytest = "^8.4.1"
+pytest-asyncio = "^1.1.0"
+pytest-fastapi = "^0.1.0"
+httpx = "^0.28.1"
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+preview = true
+lint.select = [
+  "ASYNC",
+  "B",
+  "BLE",
+  "C4",
+  "C90",
+  "E",
+  "F",
+  "FURB",
+  "I",
+  "ISC",
+  "LOG",
+  "PGH",
+  "PIE",
+  "Q",
+  "RUF",
+  "S",
+  "UP",
+  "W",
+]
+lint.ignore = [
+  "S101",
+  "COM812",
+  "COM819",
+  "D206",
+  "E111",
+  "E114",
+  "E117",
+  "E501",
+  "ISC001",
+  "Q000",
+  "Q001",
+  "Q002",
+  "Q003",
+  "W191",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"**/tests/**.py" = [
+    "S105",
+    "S106",
+]
+
+[tool.ruff.lint.isort]
+
+[tool.ruff.format]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[tool.pytest.ini_options]
+addopts = "-p no:warnings"
+asyncio_mode = "auto"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
