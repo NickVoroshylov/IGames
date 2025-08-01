@@ -55,9 +55,6 @@ coverage.xml
 .docker/
 docker-compose.override.yml
 
-# Alembic
-alembic.ini
-
 # OS specific
 .DS_Store
 Thumbs.db
